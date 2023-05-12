@@ -1,11 +1,13 @@
 import React from 'react';
 import './App.css';
-import { Home } from './pages/Home';
+import { Allroutes } from './allRoutes/Allroutes';
+import { Footer } from './components/Footer/Footer';
 
 function App() {
   return (
     <div className="App">
-      <Home/>
+      {/* <Allroutes/> */}
+      <Footer/>
     </div>
   );
 }
