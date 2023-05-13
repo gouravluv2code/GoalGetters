@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
-import { Allroutes } from './allRoutes/Allroutes';
 import { Footer } from './components/Footer/Footer';
+import Home from './pages/Home';
+import { AllRoutes } from './AllRoutes/AllRoutes';
 
 function App() {
   return (
     <div className="App">
-      {/* <Allroutes/> */}
+      <AllRoutes/>
       <Footer/>
     </div>
   );

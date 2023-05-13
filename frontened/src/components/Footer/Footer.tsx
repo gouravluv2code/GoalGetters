@@ -13,7 +13,7 @@ export const Footer = () => {
                    {" "} until you'r ready to launch
                 </h1>
                 <div>
-                    <input type="text" placeholder='Enter Your ph.No' className="text-gray-800 sm:w-72 w-full sm:mr-5 mr-1 lg:mb-0 mb-4 py=2.5 rounded px-2 focus:outline-none" />
+                    <input type="text" placeholder='Enter Your ph.No' className="text-gray-800 sm:w-72 w-full sm:mr-5 mr-1 lg:mb-0 mb-7 py-2.5 px-7 rounded focus:outline-none" />
                     <button className="bg-teal-400 hover:bg-teal-500 duration-300 px-5 py-2.5 font-[Popins] rounded-md text-white md:w-auto w-full">Request code</button>
                 </div>
             </div>
