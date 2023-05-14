@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
-import io, { Socket } from "socket.io-client";
+import io, {Socket} from 'socket.io-client';
+
 import { Chat } from "./chat";
 
 interface rooms {
   name: string;
   room: string;
 }
-const socket: Socket = io("http://localhost:8100");
+const socket: Socket = io("http://localhost:8080");
 
 export const SocketMain = () => {
   let [state, setstate] = useState<rooms>({
@@ -28,7 +29,7 @@ export const SocketMain = () => {
   return (
     <>
       {!show ? (
-        <div className="mt-40  bg-no-repeat bg-contain bg-center
+        <div className="mt-40  bg-no-repeat bg-contain bg-center mb-48
         bg-[url(https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=456&q=80)]
 
         ">

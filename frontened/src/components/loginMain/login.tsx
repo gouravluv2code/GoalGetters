@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import Swal from 'sweetalert2'
+import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 interface userLog{
     email:string,
@@ -10,8 +13,26 @@ export const Login = () => {
         email:"",
         password:""
     })
-   const handleSubmit=()=>{
+    let navigate=useNavigate()
 
+    const handelChange=(e:React.ChangeEvent<HTMLInputElement>)=>{
+      setState({...state,[e.target.name]:e.target.value})
+    }
+   const handleSubmit=(e:React.FormEvent)=>{
+    e.preventDefault();
+    axios.post("https://hackathon-1qcd.onrender.com/users/login",state)
+    .then((res)=>{
+      if(res.status){
+        console.log(res)
+        Swal.fire("Good job!", "Logged In Successfully", "success");
+        localStorage.setItem("token",res.data.token)
+        navigate("/")
+
+      }
+    })
+    .catch((err)=>{
+      console.log(err)
+    })
    }
    
   return (
@@ -39,26 +60,30 @@ w-4/5 m-auto
               />
             </a>
           </div>
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="mb-6">
               <input
                 type="text"
                 placeholder="Email"
-                className="bordder-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-primary focus-visible:shadow-none"
+                name="email"
+                onChange={handelChange}
+                className="border-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-primary focus-visible:shadow-none"
               />
             </div>
             <div className="mb-6">
               <input
                 type="password"
                 placeholder="Password"
-                className="bordder-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-primary focus-visible:shadow-none"
+                name="password"
+                onChange={handelChange}
+                className="border-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-primary focus-visible:shadow-none"
               />
             </div>
             <div className="mb-10">
               <input
                 type="submit"
                 value="Sign In"
-                className="bordder-primary w-full cursor-pointer rounded-md border bg-primary py-3 px-5 text-base
+                className="border-primary w-full cursor-pointer rounded-md border bg-primary py-3 px-5 text-base
                 bg-[#443C68]
                 text-white transition hover:bg-opacity-90"
               />
