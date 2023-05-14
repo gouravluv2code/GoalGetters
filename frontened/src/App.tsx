@@ -2,13 +2,18 @@ import React, { useState } from 'react';
 import './App.css';
 import { Footer } from './components/Footer/Footer';
 import Home from './pages/Home';
+
 import { AllRoutes } from './allRoutes/Allroutes';
+
+import Navbar from './components/Navbar/Navbar';
+
 
 function App() {
   return (
     <div className="App">
-      <AllRoutes/>
-      <Footer/>
+       <Navbar />
+       {/* <AllRoutes/>  */}
+       {/* <Footer/>  */}
     </div>
   );
 }
