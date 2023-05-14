@@ -7,7 +7,7 @@ const bcrypt = require("bcrypt");
 //register the user
 userRouter.post("/register", async (req, res) => {
   try {
-    const { email, password, name, age, username } = req.body;
+    const { email, password, name, age, username, weight, height } = req.body;
 
     // check if user with the email already exists
     const existingUser = await userModel.findOne({ email });
@@ -24,6 +24,8 @@ userRouter.post("/register", async (req, res) => {
         name,
         age,
         username,
+        height,
+        weight
       });
       await user.save();
 
