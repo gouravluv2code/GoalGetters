@@ -44,10 +44,10 @@ export const Chat: React.FC<user> = ({ socket, username, room }) => {
   }, [socket]);
 
   return (
-    <section className="bg-black dark:bg-black-900 px-21 m-auto bg-no-repeat bg-contain
+    <section className="bg-black dark:bg-black-900 px-21 m-auto bg-no-repeat bg-contain mb-48
     bg-[url(https://images.unsplash.com/photo-1550345332-09e3ac987658?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80)]
     ">
-    <div className=" w-2/5 m-auto mt-40  p-10 bg-transparent">
+    <div className=" w-2/5 m-auto   p-10 bg-transparent">
       <div className="bg-gray-800 text-white py-4 px-6 rounded">
         <h1 className="text-lg font-semibold">Talk And Work</h1>{" "}
       </div>
