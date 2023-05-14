@@ -1,17 +1,21 @@
 import React from 'react'
-import GoalTracker from '../components/GoalsTracker';
-import GoalsPage from '../components/GoalsPage';
-import ProgressAnalytics from '../components/Progress';
+import GoalTracker from '../components/GoalTracker/GoalsTracker';
+import GoalsPage from '../components/GoalsPage/GoalsPage';
+import ProgressAnalytics from '../components/Progress/Progress';
+import { GoalTracking } from '../components/GoalTracking/GoalTracking';
+import WorkoutRoutines, { workouts } from '../components/Workout/Workout';
+import NutritionalGuidance from '../components/Nutritional/Nutritional';
+import Community from '../components/community/Community';
 interface ProgressData {
   date: string;
   workoutType: string;
   duration: number;
   caloriesBurned: number;
   nutritionalIntake: {
-  protein: number;
-  carbohydrates: number;
-  fat: number;
-};
+    protein: number;
+    carbohydrates: number;
+    fat: number;
+  };
 }
 const progressData: ProgressData[] = [
   {
@@ -28,14 +32,19 @@ const progressData: ProgressData[] = [
 ];
 const Home = () => {
   return (
-    <section id="home" className="gap-16 bg-gray-20 py-10 md:h-full md:pb-0">   
-      <GoalsPage/>
-      <GoalTracker/>
-
-      <ProgressAnalytics progressData={progressData}/>
-      <br />
-      <br />
-    </section>
+    <>
+      <section id="home" className="gap-16 bg-gray-20 py-10 md:h-full md:pb-0">
+        <GoalTracking />
+        <GoalsPage />
+        {/* <GoalTracker /> */}
+        <ProgressAnalytics progressData={progressData} />
+        <br />
+        <br />
+        <WorkoutRoutines workouts={workouts} />
+        <NutritionalGuidance />
+        <Community />
+      </section>
+    </>
   );
 };
 

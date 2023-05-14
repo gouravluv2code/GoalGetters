@@ -1,5 +1,5 @@
 import React from "react";
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Label } from "recharts";
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Label, ResponsiveContainer } from "recharts";
 import dayjs from "dayjs";
 
 interface ProgressData {
@@ -46,20 +46,22 @@ const ProgressAnalytics: React.FC<ProgressAnalyticsProps> = ({ progressData }) =
           <p>Average Workout Duration: {averageDuration} min</p>
         </div>
       </div>
-      <LineChart width={800} height={400} data={formattedData}>
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="date">
-          <Label value="Date" position="bottom" offset={0} />
-        </XAxis>
-        <YAxis>
-          <Label angle={-90} position="insideLeft" style={{ textAnchor: "middle" }}>
-            Workout Duration (min)
-          </Label>
-        </YAxis>
-        <Tooltip />
-        <Legend />
-        <Line type="monotone" dataKey="duration" stroke="#8884d8" activeDot={{ r: 8 }} />
-      </LineChart>
+      <ResponsiveContainer width="100%" height={400}>
+        <LineChart data={formattedData}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="date">
+            <Label value="Date" position="bottom" offset={0} />
+          </XAxis>
+          <YAxis>
+            <Label angle={-90} position="insideLeft" style={{ textAnchor: "middle" }}>
+              Workout Duration (min)
+            </Label>
+          </YAxis>
+          <Tooltip />
+          <Legend />
+          <Line type="monotone" dataKey="duration" stroke="#8884d8" activeDot={{ r: 8 }} />
+        </LineChart>
+      </ResponsiveContainer>
     </div>
   );
 };

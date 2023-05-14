@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import ResourceCard from '../components/ResourceCard';
+import ResourceCard from '../components/ResourceCard/ResourceCard';
 interface Resource {
     id: number;
     title: string;
