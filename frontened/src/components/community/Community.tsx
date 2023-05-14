@@ -41,7 +41,7 @@ const Community: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center mt-16" style={{ color: "white" }}>
       <h2 className="text-2xl font-bold mb-4">Community and Social Features</h2>
       <div className="w-full max-w-2xl">
         <form onSubmit={handlePostSubmit}>
@@ -49,6 +49,7 @@ const Community: React.FC = () => {
             className="w-full p-2 rounded-md border border-gray-300 mb-4"
             placeholder="What's on your mind?"
             value={newPost}
+            style={{ color: "black" }}
             onChange={(event) => setNewPost(event.target.value)}
           ></textarea>
           <button className="bg-green-500 text-white px-4 py-2 rounded-md">Post</button>

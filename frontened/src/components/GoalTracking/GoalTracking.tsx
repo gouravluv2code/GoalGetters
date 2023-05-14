@@ -16,11 +16,11 @@ export const GoalTracking: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center p-4 bg-gray-100">
+    <div className="flex flex-col items-center p-4" style={{ color: "white" }}>
       <h1 className="text-3xl font-semibold mb-4">Goal Tracking</h1>
       <div className="w-full flex flex-col items-center">
   {goals.map((goal) => (
-    <div key={goal.id} className="w-1/2 mb-4 bg-white rounded-md shadow-md p-4">
+    <div key={goal.id} className="w-1/2 mb-4 bg-white rounded-md shadow-md p-4"   style={{ color: "black" }}>
       <div className="flex justify-between mb-2">
         <h2 className="text-xl font-semibold">{goal.title}</h2>
         <button

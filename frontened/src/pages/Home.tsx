@@ -6,6 +6,9 @@ import { GoalTracking } from '../components/GoalTracking/GoalTracking';
 import WorkoutRoutines, { workouts } from '../components/Workout/Workout';
 import NutritionalGuidance from '../components/Nutritional/Nutritional';
 import Community from '../components/community/Community';
+// import CarouselSlider from '../components/CarouselSlider/Carousel';
+
+
 interface ProgressData {
   date: string;
   workoutType: string;
@@ -33,7 +36,8 @@ const progressData: ProgressData[] = [
 const Home = () => {
   return (
     <>
-      <section id="home" className="gap-16 bg-gray-20 py-10 md:h-full md:pb-0">
+      <section id="home"  className="gap-16 bg-gray-900 py-10 mt-16 md:h-full md:pb-0" >
+        {/* <CarouselSlider/> */}
         <GoalTracking />
         <GoalsPage />
         {/* <GoalTracker /> */}
@@ -43,6 +47,8 @@ const Home = () => {
         <WorkoutRoutines workouts={workouts} />
         <NutritionalGuidance />
         <Community />
+
+    
       </section>
     </>
   );

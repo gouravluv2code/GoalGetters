@@ -63,7 +63,7 @@ const NutritionalGuidance= () => {
   );
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center" style={{ color: "white" }}>
     <h2 className="text-2xl font-bold mb-4">Nutritional Guidance</h2>
     <div >
       <div className="flex flex-col md:flex-row items-center md:justify-between">

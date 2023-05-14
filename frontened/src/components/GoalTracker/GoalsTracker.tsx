@@ -16,7 +16,7 @@ const ProgressBar = ({ progress, target }: { progress: number; target: number })
   const percentage = Math.round((progress / target) * 100);
 
   return (
-    <div className="relative pt-1">
+    <div className="relative pt-1" style={{ color: "white" }}>
       <div className="flex mb-2 items-center justify-between">
         <div>
           <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-blue-600 bg-blue-200">
